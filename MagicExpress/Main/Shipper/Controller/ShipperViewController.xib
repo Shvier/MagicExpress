@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2659" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ShipperViewController" customModule="MagicExpress" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="Z0g-bG-Mat" id="xsv-xT-Jyv"/>
+                <outlet property="checkButton" destination="5nU-tp-FQO" id="U8g-14-XMM"/>
+                <outlet property="contentTextView" destination="tA3-o8-ahv" id="MiT-F2-v67"/>
+                <outlet property="shipperPopUpButton" destination="8xB-Yq-Dgj" id="jXX-E8-E7X"/>
+                <outlet property="shipperTextField" destination="Fou-cm-1zi" id="CuQ-U1-Hg9"/>
+                <outlet property="subscribeButton" destination="3AZ-Is-G92" id="D79-ge-rz8"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-Yq-Dgj">
+                    <rect key="frame" x="18" y="228" width="96" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="BL7-E1-p8h"/>
+                        <constraint firstAttribute="width" constant="91" id="Bic-S0-efZ"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="请选择" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UH4-vG-tvh" id="Yev-yU-5Ei">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="fYK-VZ-Wkw">
+                            <items>
+                                <menuItem title="请选择" state="on" id="UH4-vG-tvh"/>
+                                <menuItem title="中通快递" id="gi2-rV-mVA"/>
+                                <menuItem title="京东快递" id="xwL-he-C1x"/>
+                                <menuItem title="顺丰速运" id="0xo-hl-YmK"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z0g-bG-Mat">
+                    <rect key="frame" x="316" y="13" width="76" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="2md-bR-t0W"/>
+                        <constraint firstAttribute="height" constant="21" id="A4r-y9-ZeI"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="48f-PR-Zle">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="cancelAction:" target="-2" id="3sM-Sj-23s"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3AZ-Is-G92">
+                    <rect key="frame" x="390" y="13" width="76" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="9XU-5b-XjO"/>
+                        <constraint firstAttribute="height" constant="21" id="iWL-Dn-g5c"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="订阅" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SQi-C6-VbI">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="subscribeAction:" target="-2" id="SrP-Ja-CX8"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-cm-1zi">
+                    <rect key="frame" x="131" y="230" width="255" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="5yj-0d-OwD"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="快递单号" drawsBackground="YES" id="HYi-QP-G4c">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-tp-FQO">
+                    <rect key="frame" x="390" y="223" width="76" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="aLe-1K-0CD"/>
+                        <constraint firstAttribute="height" constant="21" id="sXf-NT-oxM"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="查询" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dcn-D9-7Xu">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="checkAction:" target="-2" id="26u-Kp-sMv"/>
+                    </connections>
+                </button>
+                <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-CS-JCx">
+                    <rect key="frame" x="20" y="51" width="440" height="169"/>
+                    <clipView key="contentView" id="97G-R4-a2k">
+                        <rect key="frame" x="1" y="1" width="423" height="167"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView editable="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="tA3-o8-ahv">
+                                <rect key="frame" x="0.0" y="-0.5" width="423" height="167"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="423" height="167"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="ubq-Y8-N8o">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TB3-7K-XeU">
+                        <rect key="frame" x="424" y="1" width="15" height="167"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3AZ-Is-G92" secondAttribute="trailing" constant="20" id="AUZ-CY-lmJ"/>
+                <constraint firstItem="5nU-tp-FQO" firstAttribute="centerY" secondItem="Fou-cm-1zi" secondAttribute="centerY" id="GeR-m4-vlP"/>
+                <constraint firstItem="5nU-tp-FQO" firstAttribute="leading" secondItem="Fou-cm-1zi" secondAttribute="trailing" constant="10" id="QeW-cp-IVO"/>
+                <constraint firstItem="3AZ-Is-G92" firstAttribute="centerY" secondItem="Z0g-bG-Mat" secondAttribute="centerY" id="TQW-33-x4b"/>
+                <constraint firstItem="8xB-Yq-Dgj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="V34-O4-2QE"/>
+                <constraint firstItem="Fou-cm-1zi" firstAttribute="leading" secondItem="8xB-Yq-Dgj" secondAttribute="trailing" constant="20" id="VSm-cQ-8MQ"/>
+                <constraint firstAttribute="trailing" secondItem="5nU-tp-FQO" secondAttribute="trailing" constant="20" id="XmX-tf-UtX"/>
+                <constraint firstItem="Lo4-CS-JCx" firstAttribute="top" secondItem="5nU-tp-FQO" secondAttribute="bottom" constant="10" id="Zbx-gM-kCC"/>
+                <constraint firstAttribute="trailing" secondItem="Lo4-CS-JCx" secondAttribute="trailing" constant="20" id="fDU-z3-hAh"/>
+                <constraint firstItem="Lo4-CS-JCx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="lgq-8y-NZh"/>
+                <constraint firstAttribute="bottom" secondItem="3AZ-Is-G92" secondAttribute="bottom" constant="20" id="qYd-ch-exe"/>
+                <constraint firstItem="3AZ-Is-G92" firstAttribute="leading" secondItem="Z0g-bG-Mat" secondAttribute="trailing" constant="10" id="qqj-gZ-MI5"/>
+                <constraint firstItem="Fou-cm-1zi" firstAttribute="centerY" secondItem="8xB-Yq-Dgj" secondAttribute="centerY" id="t5O-WE-tbV"/>
+                <constraint firstItem="8xB-Yq-Dgj" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="tjS-hR-hUr"/>
+                <constraint firstItem="3AZ-Is-G92" firstAttribute="top" secondItem="Lo4-CS-JCx" secondAttribute="bottom" constant="10" id="wo7-z5-Zas"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>
