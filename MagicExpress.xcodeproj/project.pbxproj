@@ -14,6 +14,7 @@
 		C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */; };
 		C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */; };
 		C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */; };
+		C041ABF91EE6C2FD0068D89F /* MagicExpress.db in Resources */ = {isa = PBXBuildFile; fileRef = C041ABF81EE6C2FD0068D89F /* MagicExpress.db */; };
 		C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */; };
 		C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */; };
 		C043166D1EA3A96E002E0533 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043166B1EA3A96E002E0533 /* PopoverViewController.swift */; };
@@ -30,6 +31,7 @@
 		C09A4B9D1EA12B4B004818C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09A4B9B1EA12B4B004818C4 /* Main.storyboard */; };
 		C09A4BA81EA12B4B004818C4 /* MagicExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A4BA71EA12B4B004818C4 /* MagicExpressTests.swift */; };
 		C09A4BB31EA12B4B004818C4 /* MagicExpressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A4BB21EA12B4B004818C4 /* MagicExpressUITests.swift */; };
+		C0A589EC1EE52DC6001051A7 /* SubscribeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A589EB1EE52DC6001051A7 /* SubscribeAPIModel.swift */; };
 		C0C2CAD01EA3BCF100DF68DF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2CACF1EA3BCF100DF68DF /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,7 @@
 		C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperAPIService.swift; sourceTree = "<group>"; };
 		C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperResultModel.swift; sourceTree = "<group>"; };
 		C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceAPIModel.swift; sourceTree = "<group>"; };
+		C041ABF81EE6C2FD0068D89F /* MagicExpress.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MagicExpress.db; sourceTree = "<group>"; };
 		C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCollectionItem.swift; sourceTree = "<group>"; };
 		C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverCollectionItem.xib; sourceTree = "<group>"; };
 		C043166B1EA3A96E002E0533 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		C09A4BB21EA12B4B004818C4 /* MagicExpressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicExpressUITests.swift; sourceTree = "<group>"; };
 		C09A4BB41EA12B4B004818C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C09A4BCF1EA12CDE004818C4 /* MagicExpress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MagicExpress.entitlements; sourceTree = "<group>"; };
+		C0A589EB1EE52DC6001051A7 /* SubscribeAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeAPIModel.swift; sourceTree = "<group>"; };
 		C0C2CACF1EA3BCF100DF68DF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F4EAAEC3D7EEAECEF30EAD21 /* Pods-MagicExpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicExpress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicExpress/Pods-MagicExpress.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +227,30 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C041ABF51EE6BCC60068D89F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C041ABF81EE6C2FD0068D89F /* MagicExpress.db */,
+				C041ABF61EE6BCC60068D89F /* Express */,
+				C041ABF71EE6BCC60068D89F /* Shipper */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C041ABF61EE6BCC60068D89F /* Express */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Express;
+			sourceTree = "<group>";
+		};
+		C041ABF71EE6BCC60068D89F /* Shipper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shipper;
+			sourceTree = "<group>";
+		};
 		C04D83551EA60FD4002968FB /* APIService */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +315,7 @@
 				C061C73F1EA89B0A00F5DBCE /* UserInfoAPIModel.swift */,
 				C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */,
 				C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */,
+				C0A589EB1EE52DC6001051A7 /* SubscribeAPIModel.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -332,6 +361,7 @@
 		C09A4B941EA12B4B004818C4 /* MagicExpress */ = {
 			isa = PBXGroup;
 			children = (
+				C041ABF51EE6BCC60068D89F /* Database */,
 				C061C73B1EA89AD300F5DBCE /* Base */,
 				C061C72D1EA8837D00F5DBCE /* Utility */,
 				C061C72C1EA8833200F5DBCE /* Service */,
@@ -560,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C041ABF91EE6C2FD0068D89F /* MagicExpress.db in Resources */,
 				C043166E1EA3A96E002E0533 /* PopoverViewController.xib in Resources */,
 				C03197BF1EE14AAE00A81510 /* ShipperViewController.xib in Resources */,
 				C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */,
@@ -647,6 +678,7 @@
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
 				C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */,
 				C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */,
+				C0A589EC1EE52DC6001051A7 /* SubscribeAPIModel.swift in Sources */,
 				C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */,
 				C008A75A1EA1CD0A00D2F7D0 /* HomeViewController.swift in Sources */,
 				C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */,

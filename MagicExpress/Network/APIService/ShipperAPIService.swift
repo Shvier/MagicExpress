@@ -30,8 +30,16 @@ class ShipperAPIService: NSObject {
         }
     }
     
-    static func subscribe() {
-        
+    static func subscribe(shipperCode: String, logisticCode: String, success: @escaping (_ subscribeAPIModel: SubscribeAPIModel) -> Void, failure: @escaping (_ error: Error) -> Void) {
+        HTTPManager.post("http://www.shvier.com:10001", parameters: ["shipperCode": shipperCode, "logisticCode": logisticCode], success: { (data) in
+            let json = JSON(data)
+            let subscribeAPIModel = SubscribeAPIModel()
+            subscribeAPIModel.updateTime = json["UpdateTime"].string
+            subscribeAPIModel.result = json["Success"].bool
+            success(subscribeAPIModel)
+        }) { (error) in
+            failure(error)
+        }
     }
 
 }

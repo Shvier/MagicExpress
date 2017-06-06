@@ -879,12 +879,12 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WSU-gf-g08">
-                                <rect key="frame" x="433" y="232" width="33" height="32"/>
+                                <rect key="frame" x="402" y="232" width="64" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="21" id="8Ve-AG-zDg"/>
+                                    <constraint firstAttribute="width" constant="52" id="8Ve-AG-zDg"/>
                                     <constraint firstAttribute="height" constant="21" id="Rqj-wr-olO"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="btn_add" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fH9-DS-cnr">
+                                <buttonCell key="cell" type="push" title="查询" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fH9-DS-cnr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -893,7 +893,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e8V-bX-Axu">
-                                <rect key="frame" x="309" y="232" width="64" height="32"/>
+                                <rect key="frame" x="278" y="232" width="64" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="86q-Di-Hpb"/>
                                     <constraint firstAttribute="height" constant="21" id="IAe-ir-e5a"/>
@@ -907,7 +907,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dAP-l8-fFb">
-                                <rect key="frame" x="371" y="232" width="64" height="32"/>
+                                <rect key="frame" x="340" y="232" width="64" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="q3x-HL-8ig"/>
                                     <constraint firstAttribute="height" constant="21" id="xQO-Af-prS"/>
@@ -950,7 +950,4 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="btn_add" width="128" height="128"/>
-    </resources>
 </document>

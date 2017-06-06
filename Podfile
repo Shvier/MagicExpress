@@ -10,4 +10,7 @@ target ‘MagicExpress’ do
    # Data
    pod ‘SwiftyJSON’
 
+   # Database
+   pod 'FMDB'
+
 end

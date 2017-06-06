@@ -20,7 +20,7 @@ class ShipperViewController: NSViewController {
     @IBAction func checkAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
-        ShipperAPIService.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { (shipperResultModel) in
+        ShipperAPIService.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperResultModel) in
             var result: String = ""
             for trace in shipperResultModel.traces {
                 result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
@@ -37,9 +37,12 @@ class ShipperViewController: NSViewController {
     
     @IBAction func subscribeAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
-        let shipperText: String = shipperTextField.stringValue
-        print("\(shipperCode)+\(shipperText)")
-        dismissViewController(self)
+        let logisticCode: String = shipperTextField.stringValue
+        ShipperAPIService.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeAPIModel) in
+            self.dismissViewController(self)
+        }) { (error) in
+            
+        }
     }
     
     override func viewDidLoad() {
