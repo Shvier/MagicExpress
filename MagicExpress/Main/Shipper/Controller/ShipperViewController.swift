@@ -19,6 +19,7 @@ class ShipperViewController: NSViewController {
     
     @IBAction func checkAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
+        print(ExpressTable.getExpressCode(shipperCode: shipperCode))
         let logisticCode: String = shipperTextField.stringValue
         ShipperAPIService.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperResultModel) in
             var result: String = ""
@@ -45,6 +46,16 @@ class ShipperViewController: NSViewController {
         }
     }
     
+    @IBAction func checkSelectedItemValid(_ sender: NSPopUpButton) {
+        if sender.indexOfSelectedItem != 0 && shipperTextField.stringValue.lengthOfBytes(using: .utf8) != 0 {
+            checkButton.isEnabled = true
+            subscribeButton.isEnabled = true
+        } else if sender.indexOfSelectedItem == 0 {
+            checkButton.isEnabled = false
+            subscribeButton.isEnabled = false
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -53,8 +64,10 @@ class ShipperViewController: NSViewController {
         checkButton.isEnabled = false
         subscribeButton.isEnabled = false
         contentTextView.string = "12\n3i\n9\noj\na\nsd\nm.,,./sdf,pa\ns\n9\n0\na\nsd\nf\na\ns\nd\nf\nw\nro"
+        
+        shipperPopUpButton.addItems(withTitles: ExpressTable.getExpressName())
     }
-    
+
 }
 
 extension ShipperViewController: NSTextFieldDelegate {
@@ -68,7 +81,7 @@ extension ShipperViewController: NSTextFieldDelegate {
             if length == 0 {
                 checkButton.isEnabled = false
                 subscribeButton.isEnabled = false
-            } else {
+            } else if shipperPopUpButton.indexOfSelectedItem != 0 {
                 checkButton.isEnabled = true
                 subscribeButton.isEnabled = true
             }

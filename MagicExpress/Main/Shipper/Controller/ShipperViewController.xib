@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-Yq-Dgj">
-                    <rect key="frame" x="18" y="228" width="96" height="26"/>
+                    <rect key="frame" x="18" y="228" width="145" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="BL7-E1-p8h"/>
-                        <constraint firstAttribute="width" constant="91" id="Bic-S0-efZ"/>
+                        <constraint firstAttribute="width" constant="140" id="Bic-S0-efZ"/>
                     </constraints>
                     <popUpButtonCell key="cell" type="push" title="请选择" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UH4-vG-tvh" id="Yev-yU-5Ei">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -35,12 +35,12 @@
                         <menu key="menu" id="fYK-VZ-Wkw">
                             <items>
                                 <menuItem title="请选择" state="on" id="UH4-vG-tvh"/>
-                                <menuItem title="中通快递" id="gi2-rV-mVA"/>
-                                <menuItem title="京东快递" id="xwL-he-C1x"/>
-                                <menuItem title="顺丰速运" id="0xo-hl-YmK"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="checkSelectedItemValid:" target="-2" id="Gr3-wJ-kpM"/>
+                    </connections>
                 </popUpButton>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z0g-bG-Mat">
                     <rect key="frame" x="316" y="13" width="76" height="32"/>
@@ -71,7 +71,7 @@
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-cm-1zi">
-                    <rect key="frame" x="131" y="230" width="255" height="22"/>
+                    <rect key="frame" x="180" y="230" width="206" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="5yj-0d-OwD"/>
                     </constraints>

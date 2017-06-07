@@ -21,6 +21,11 @@
 		C04D83571EA60FF8002968FB /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D83561EA60FF8002968FB /* HTTPManager.swift */; };
 		C0510BD71EE7AB9D00EC11C8 /* MagicExpress.db in Resources */ = {isa = PBXBuildFile; fileRef = C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */; };
 		C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */; };
+		C0510BDB1EE7C95A00EC11C8 /* ShipperTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BDA1EE7C95A00EC11C8 /* ShipperTable.swift */; };
+		C0510BDE1EE7D77400EC11C8 /* ShipperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BDD1EE7D77400EC11C8 /* ShipperModel.swift */; };
+		C0510BE01EE7D7C000EC11C8 /* TraceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BDF1EE7D7C000EC11C8 /* TraceModel.swift */; };
+		C0510BE21EE7D8B400EC11C8 /* ExpressTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BE11EE7D8B400EC11C8 /* ExpressTable.swift */; };
+		C0510BE51EE7D97B00EC11C8 /* BaseTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BE41EE7D97B00EC11C8 /* BaseTable.swift */; };
 		C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */; };
 		C061C7331EA885DF00F5DBCE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7321EA885DF00F5DBCE /* UserManager.swift */; };
 		C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7351EA8886800F5DBCE /* SystemManger.swift */; };
@@ -69,6 +74,11 @@
 		C04D83561EA60FF8002968FB /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MagicExpress.db; sourceTree = "<group>"; };
 		C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C0510BDA1EE7C95A00EC11C8 /* ShipperTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperTable.swift; sourceTree = "<group>"; };
+		C0510BDD1EE7D77400EC11C8 /* ShipperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperModel.swift; sourceTree = "<group>"; };
+		C0510BDF1EE7D7C000EC11C8 /* TraceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceModel.swift; sourceTree = "<group>"; };
+		C0510BE11EE7D8B400EC11C8 /* ExpressTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressTable.swift; sourceTree = "<group>"; };
+		C0510BE41EE7D97B00EC11C8 /* BaseTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTable.swift; sourceTree = "<group>"; };
 		C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C061C7321EA885DF00F5DBCE /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C061C7351EA8886800F5DBCE /* SystemManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemManger.swift; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 		C03197B51EE14A6F00A81510 /* Shipper */ = {
 			isa = PBXGroup;
 			children = (
+				C0510BDC1EE7D76800EC11C8 /* Model */,
 				C03197B61EE14A6F00A81510 /* Controller */,
 				C03197B71EE14A6F00A81510 /* DataController */,
 				C03197B81EE14A6F00A81510 /* View */,
@@ -242,6 +253,7 @@
 		C041ABF61EE6BCC60068D89F /* Express */ = {
 			isa = PBXGroup;
 			children = (
+				C0510BE11EE7D8B400EC11C8 /* ExpressTable.swift */,
 			);
 			path = Express;
 			sourceTree = "<group>";
@@ -249,6 +261,7 @@
 		C041ABF71EE6BCC60068D89F /* Shipper */ = {
 			isa = PBXGroup;
 			children = (
+				C0510BDA1EE7C95A00EC11C8 /* ShipperTable.swift */,
 			);
 			path = Shipper;
 			sourceTree = "<group>";
@@ -270,6 +283,23 @@
 				C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C0510BDC1EE7D76800EC11C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0510BDD1EE7D77400EC11C8 /* ShipperModel.swift */,
+				C0510BDF1EE7D7C000EC11C8 /* TraceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0510BE31EE7D96D00EC11C8 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				C0510BE41EE7D97B00EC11C8 /* BaseTable.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		C061C72C1EA8833200F5DBCE /* Service */ = {
@@ -334,6 +364,7 @@
 		C061C73B1EA89AD300F5DBCE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C0510BE31EE7D96D00EC11C8 /* Table */,
 				C061C73C1EA89AD300F5DBCE /* Model */,
 			);
 			path = Base;
@@ -688,15 +719,20 @@
 				C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */,
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
 				C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */,
+				C0510BDE1EE7D77400EC11C8 /* ShipperModel.swift in Sources */,
+				C0510BDB1EE7C95A00EC11C8 /* ShipperTable.swift in Sources */,
 				C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */,
 				C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */,
 				C0A589EC1EE52DC6001051A7 /* SubscribeAPIModel.swift in Sources */,
 				C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */,
 				C008A75A1EA1CD0A00D2F7D0 /* HomeViewController.swift in Sources */,
 				C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */,
+				C0510BE51EE7D97B00EC11C8 /* BaseTable.swift in Sources */,
 				C061C7331EA885DF00F5DBCE /* UserManager.swift in Sources */,
 				C09A4B961EA12B4B004818C4 /* AppDelegate.swift in Sources */,
+				C0510BE21EE7D8B400EC11C8 /* ExpressTable.swift in Sources */,
 				C061C7401EA89B0A00F5DBCE /* UserInfoAPIModel.swift in Sources */,
+				C0510BE01EE7D7C000EC11C8 /* TraceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
