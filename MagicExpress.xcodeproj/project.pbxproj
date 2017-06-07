@@ -20,6 +20,7 @@
 		C043166E1EA3A96E002E0533 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C043166C1EA3A96E002E0533 /* PopoverViewController.xib */; };
 		C04D83571EA60FF8002968FB /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D83561EA60FF8002968FB /* HTTPManager.swift */; };
 		C0510BD71EE7AB9D00EC11C8 /* MagicExpress.db in Resources */ = {isa = PBXBuildFile; fileRef = C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */; };
+		C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */; };
 		C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */; };
 		C061C7331EA885DF00F5DBCE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7321EA885DF00F5DBCE /* UserManager.swift */; };
 		C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7351EA8886800F5DBCE /* SystemManger.swift */; };
@@ -67,6 +68,7 @@
 		C043166C1EA3A96E002E0533 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		C04D83561EA60FF8002968FB /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MagicExpress.db; sourceTree = "<group>"; };
+		C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C061C7321EA885DF00F5DBCE /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C061C7351EA8886800F5DBCE /* SystemManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemManger.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */,
+				C0510BD81EE7ABE600EC11C8 /* DatabaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				C0C2CAD01EA3BCF100DF68DF /* HomeTableViewCell.swift in Sources */,
 				C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */,
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
+				C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */,
 				C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */,
 				C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */,
 				C0A589EC1EE52DC6001051A7 /* SubscribeAPIModel.swift in Sources */,
