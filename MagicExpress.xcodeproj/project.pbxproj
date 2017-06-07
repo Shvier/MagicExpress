@@ -14,12 +14,12 @@
 		C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */; };
 		C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */; };
 		C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */; };
-		C041ABF91EE6C2FD0068D89F /* MagicExpress.db in Resources */ = {isa = PBXBuildFile; fileRef = C041ABF81EE6C2FD0068D89F /* MagicExpress.db */; };
 		C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */; };
 		C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */; };
 		C043166D1EA3A96E002E0533 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043166B1EA3A96E002E0533 /* PopoverViewController.swift */; };
 		C043166E1EA3A96E002E0533 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C043166C1EA3A96E002E0533 /* PopoverViewController.xib */; };
 		C04D83571EA60FF8002968FB /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D83561EA60FF8002968FB /* HTTPManager.swift */; };
+		C0510BD71EE7AB9D00EC11C8 /* MagicExpress.db in Resources */ = {isa = PBXBuildFile; fileRef = C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */; };
 		C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */; };
 		C061C7331EA885DF00F5DBCE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7321EA885DF00F5DBCE /* UserManager.swift */; };
 		C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7351EA8886800F5DBCE /* SystemManger.swift */; };
@@ -61,12 +61,12 @@
 		C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperAPIService.swift; sourceTree = "<group>"; };
 		C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperResultModel.swift; sourceTree = "<group>"; };
 		C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceAPIModel.swift; sourceTree = "<group>"; };
-		C041ABF81EE6C2FD0068D89F /* MagicExpress.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MagicExpress.db; sourceTree = "<group>"; };
 		C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCollectionItem.swift; sourceTree = "<group>"; };
 		C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverCollectionItem.xib; sourceTree = "<group>"; };
 		C043166B1EA3A96E002E0533 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		C043166C1EA3A96E002E0533 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		C04D83561EA60FF8002968FB /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MagicExpress.db; sourceTree = "<group>"; };
 		C061C72F1EA8838C00F5DBCE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C061C7321EA885DF00F5DBCE /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C061C7351EA8886800F5DBCE /* SystemManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemManger.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		C041ABF51EE6BCC60068D89F /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				C041ABF81EE6C2FD0068D89F /* MagicExpress.db */,
+				C0510BD51EE7AB9D00EC11C8 /* Manager */,
 				C041ABF61EE6BCC60068D89F /* Express */,
 				C041ABF71EE6BCC60068D89F /* Shipper */,
 			);
@@ -259,6 +259,14 @@
 				C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		C0510BD51EE7AB9D00EC11C8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C0510BD61EE7AB9D00EC11C8 /* MagicExpress.db */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		C061C72C1EA8833200F5DBCE /* Service */ = {
@@ -590,7 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C041ABF91EE6C2FD0068D89F /* MagicExpress.db in Resources */,
+				C0510BD71EE7AB9D00EC11C8 /* MagicExpress.db in Resources */,
 				C043166E1EA3A96E002E0533 /* PopoverViewController.xib in Resources */,
 				C03197BF1EE14AAE00A81510 /* ShipperViewController.xib in Resources */,
 				C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */,
