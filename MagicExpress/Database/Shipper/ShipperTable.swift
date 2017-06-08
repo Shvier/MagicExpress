@@ -13,11 +13,14 @@ class ShipperTable: BaseTable {
             DatabaseManager.sharedInstance.database = nil
             return
         }
-        if shipper.logisticCode == nil || shipper.shipperCode == nil || shipper.updateTime == nil {
+        if shipper.logisticCode == nil || shipper.shipperCode == nil || shipper.updateTime == nil || shipper.traces == nil {
             return
         }
         do {
             try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Shipper (logistic_code, shipper_code, update_time)" + "VALUES (?, ?, ?)", values: [shipper.logisticCode!, shipper.shipperCode!, shipper.updateTime!])
+            for trace in shipper.traces! {
+                try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Trace (shipper_code, logistic_code, accept_time, accept_station)" + "VALUES (?, ?, ?, ?)", values: [shipper.shipperCode!, shipper.logisticCode!, trace.acceptTime!, trace.acceptStation!])
+            }
         } catch (let error) {
             print("insert error: \(error)")
         }
@@ -31,8 +34,7 @@ class ShipperTable: BaseTable {
         }
         do {
             try DatabaseManager.sharedInstance.database?.executeUpdate("DELETE FROM Shipper WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
-            // delete from Trace Table
-            // TODO
+            try DatabaseManager.sharedInstance.database?.executeUpdate("DELETE FROM Trace WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
         } catch (let error) {
             print("insert error: \(error)")
         }

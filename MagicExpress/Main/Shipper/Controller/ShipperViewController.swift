@@ -19,16 +19,16 @@ class ShipperViewController: NSViewController {
     
     @IBAction func checkAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
-        print(ExpressTable.getExpressCode(shipperCode: shipperCode))
         let logisticCode: String = shipperTextField.stringValue
-        ShipperAPIService.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperResultModel) in
+        ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
             var result: String = ""
-            for trace in shipperResultModel.traces {
+            for trace in shipperModel.traces! {
                 result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
             }
             self.contentTextView.string = result
+            ShipperTable.insertShipper(shipper: shipperModel)
         }) { (error) in
-            
+            print("error: \(error)")
         }
     }
     

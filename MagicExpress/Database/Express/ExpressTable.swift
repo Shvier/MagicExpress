@@ -14,8 +14,7 @@ class ExpressTable: BaseTable {
             return ""
         }
         do {
-            let utf8ShipperCode: String! = String.init(utf8String: shipperCode.cString(using: .utf8)!)
-            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT * FROM Express WHERE express_cn = ?", values: [utf8ShipperCode])
+            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT * FROM Express WHERE express_cn = ?", values: [shipperCode.utf8String()])
             while (result?.next())! {
                 let expressCode: String! = result?.string(forColumn: "express_en")!
                 DatabaseManager.sharedInstance.database?.close()

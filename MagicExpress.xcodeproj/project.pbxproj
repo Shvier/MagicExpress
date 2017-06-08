@@ -14,6 +14,8 @@
 		C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */; };
 		C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */; };
 		C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */; };
+		C039E0BB1EE90F4E005ACCF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039E0BA1EE90F4E005ACCF1 /* String+extension.swift */; };
+		C039E0BD1EE920E7005ACCF1 /* ShipperDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039E0BC1EE920E7005ACCF1 /* ShipperDataController.swift */; };
 		C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */; };
 		C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */; };
 		C043166D1EA3A96E002E0533 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043166B1EA3A96E002E0533 /* PopoverViewController.swift */; };
@@ -67,6 +69,8 @@
 		C03619CB1EE2886F00B79F21 /* ShipperAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperAPIService.swift; sourceTree = "<group>"; };
 		C03619CD1EE28ADF00B79F21 /* ShipperResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperResultModel.swift; sourceTree = "<group>"; };
 		C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceAPIModel.swift; sourceTree = "<group>"; };
+		C039E0BA1EE90F4E005ACCF1 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		C039E0BC1EE920E7005ACCF1 /* ShipperDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperDataController.swift; sourceTree = "<group>"; };
 		C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCollectionItem.swift; sourceTree = "<group>"; };
 		C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverCollectionItem.xib; sourceTree = "<group>"; };
 		C043166B1EA3A96E002E0533 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		C03197B71EE14A6F00A81510 /* DataController */ = {
 			isa = PBXGroup;
 			children = (
+				C039E0BC1EE920E7005ACCF1 /* ShipperDataController.swift */,
 			);
 			path = DataController;
 			sourceTree = "<group>";
@@ -238,6 +243,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C039E0B91EE90F35005ACCF1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C039E0BA1EE90F4E005ACCF1 /* String+extension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		C041ABF51EE6BCC60068D89F /* Database */ = {
@@ -403,6 +416,7 @@
 		C09A4B941EA12B4B004818C4 /* MagicExpress */ = {
 			isa = PBXGroup;
 			children = (
+				C039E0B91EE90F35005ACCF1 /* Category */,
 				C041ABF51EE6BCC60068D89F /* Database */,
 				C061C73B1EA89AD300F5DBCE /* Base */,
 				C061C72D1EA8837D00F5DBCE /* Utility */,
@@ -718,10 +732,12 @@
 				C0C2CAD01EA3BCF100DF68DF /* HomeTableViewCell.swift in Sources */,
 				C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */,
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
+				C039E0BB1EE90F4E005ACCF1 /* String+extension.swift in Sources */,
 				C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */,
 				C0510BDE1EE7D77400EC11C8 /* ShipperModel.swift in Sources */,
 				C0510BDB1EE7C95A00EC11C8 /* ShipperTable.swift in Sources */,
 				C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */,
+				C039E0BD1EE920E7005ACCF1 /* ShipperDataController.swift in Sources */,
 				C061C7361EA8886800F5DBCE /* SystemManger.swift in Sources */,
 				C0A589EC1EE52DC6001051A7 /* SubscribeAPIModel.swift in Sources */,
 				C03619CE1EE28ADF00B79F21 /* ShipperResultModel.swift in Sources */,
