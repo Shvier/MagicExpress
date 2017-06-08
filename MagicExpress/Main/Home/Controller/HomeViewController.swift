@@ -69,6 +69,10 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
         return shippers == nil ? 0 : (shippers?.count)!
     }
     
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var reuse = ""
         if (tableColumn?.isEqual(to: tableView.tableColumns[0]))! {
@@ -96,7 +100,6 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
                 return cell
             }
         }
-
         return nil
     }
 
