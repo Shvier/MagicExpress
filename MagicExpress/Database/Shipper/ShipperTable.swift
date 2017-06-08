@@ -63,31 +63,28 @@ class ShipperTable: BaseTable {
         DatabaseManager.sharedInstance.database?.close()
     }
     
-    static func getShipper(logisticCode: String, shipperCode: String) -> ShipperModel {
+    static func getShippers() -> [ShipperModel] {
         if !(DatabaseManager.sharedInstance.database?.open())! {
             DatabaseManager.sharedInstance.database = nil
-            return ShipperModel()
+            return Array<ShipperModel>()
         }
         do {
-            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT * FROM Trace WHERE logistic_code = ? AND shipper_code = ? ORDER BY accept_time", values: [logisticCode, shipperCode])
-            let shipper = ShipperModel()
-            shipper.logisticCode = logisticCode
-            shipper.shipperCode = shipperCode
-            var traces = Array<TraceModel>()
+            var shippers = Array<ShipperModel>()
+            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT * FROM Shipper", values: nil)
             while (result?.next())! {
-                let trace = TraceModel()
-                trace.logisticCode = logisticCode
-                trace.shipperCode = shipperCode
-                trace.acceptTime = result?.string(forColumn: "accept_time")
-                trace.acceptStation = result?.string(forColumn: "accept_station")
-                traces.append(trace)
+                let logisticCode = result?.string(forColumn: "logistic_code")
+                let shipperCode = result?.string(forColumn: "shipper_code")
+                let shipper = ShipperModel()
+                shipper.logisticCode = logisticCode
+                shipper.shipperCode = shipperCode
+                shipper.traces = TraceTable.getTraces(logisticCode: logisticCode!, shipperCode: shipperCode!)
+                shippers.append(shipper)
             }
-            shipper.traces = traces
-            return shipper
+            return shippers
         } catch (let error) {
             print("\(error)")
         }
-        return ShipperModel()
+        return Array<ShipperModel>()
     }
 
 }

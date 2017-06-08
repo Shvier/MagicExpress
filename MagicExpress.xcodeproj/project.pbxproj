@@ -16,6 +16,7 @@
 		C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */; };
 		C039E0BB1EE90F4E005ACCF1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039E0BA1EE90F4E005ACCF1 /* String+extension.swift */; };
 		C039E0BD1EE920E7005ACCF1 /* ShipperDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039E0BC1EE920E7005ACCF1 /* ShipperDataController.swift */; };
+		C039E0C01EE94251005ACCF1 /* TraceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039E0BF1EE94251005ACCF1 /* TraceTable.swift */; };
 		C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */; };
 		C043166A1EA3A8F9002E0533 /* PopoverCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */; };
 		C043166D1EA3A96E002E0533 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043166B1EA3A96E002E0533 /* PopoverViewController.swift */; };
@@ -71,6 +72,7 @@
 		C03619CF1EE2CD1900B79F21 /* TraceAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceAPIModel.swift; sourceTree = "<group>"; };
 		C039E0BA1EE90F4E005ACCF1 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		C039E0BC1EE920E7005ACCF1 /* ShipperDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipperDataController.swift; sourceTree = "<group>"; };
+		C039E0BF1EE94251005ACCF1 /* TraceTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceTable.swift; sourceTree = "<group>"; };
 		C04316671EA3A8F9002E0533 /* PopoverCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCollectionItem.swift; sourceTree = "<group>"; };
 		C04316681EA3A8F9002E0533 /* PopoverCollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverCollectionItem.xib; sourceTree = "<group>"; };
 		C043166B1EA3A96E002E0533 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -253,9 +255,18 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		C039E0BE1EE94245005ACCF1 /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				C039E0BF1EE94251005ACCF1 /* TraceTable.swift */,
+			);
+			path = Trace;
+			sourceTree = "<group>";
+		};
 		C041ABF51EE6BCC60068D89F /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				C039E0BE1EE94245005ACCF1 /* Trace */,
 				C0510BD51EE7AB9D00EC11C8 /* Manager */,
 				C041ABF61EE6BCC60068D89F /* Express */,
 				C041ABF71EE6BCC60068D89F /* Shipper */,
@@ -744,6 +755,7 @@
 				C008A75A1EA1CD0A00D2F7D0 /* HomeViewController.swift in Sources */,
 				C061C7301EA8838C00F5DBCE /* UserDefaults.swift in Sources */,
 				C0510BE51EE7D97B00EC11C8 /* BaseTable.swift in Sources */,
+				C039E0C01EE94251005ACCF1 /* TraceTable.swift in Sources */,
 				C061C7331EA885DF00F5DBCE /* UserManager.swift in Sources */,
 				C09A4B961EA12B4B004818C4 /* AppDelegate.swift in Sources */,
 				C0510BE21EE7D8B400EC11C8 /* ExpressTable.swift in Sources */,
