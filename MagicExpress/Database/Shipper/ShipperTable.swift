@@ -8,7 +8,29 @@
 
 class ShipperTable: BaseTable {
     
-    static func insertShipper(shipper: ShipperModel) {
+    static func checkDataExistInShipper(logisticCode: String, shipperCode: String) -> Bool {
+        if !(DatabaseManager.sharedInstance.database?.open())! {
+            DatabaseManager.sharedInstance.database = nil
+            return false
+        }
+        do {
+            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT COUNT(update_time) AS countNum FROM Shipper WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
+            while (result?.next())! {
+                let count = result?.int(forColumn: "countNum")
+                if count != nil && count! > 0 {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            DatabaseManager.sharedInstance.database?.close()
+        } catch (let error) {
+            print("\(error)")
+        }
+        return false
+    }
+    
+    static func insertShipper(shipper: ShipperModel, failure: @escaping (_ error: Error) -> Void) {
         if !(DatabaseManager.sharedInstance.database?.open())! {
             DatabaseManager.sharedInstance.database = nil
             return
@@ -22,7 +44,7 @@ class ShipperTable: BaseTable {
                 try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Trace (shipper_code, logistic_code, accept_time, accept_station)" + "VALUES (?, ?, ?, ?)", values: [shipper.shipperCode!, shipper.logisticCode!, trace.acceptTime!, trace.acceptStation!])
             }
         } catch (let error) {
-            print("insert error: \(error)")
+            failure(error)
         }
         DatabaseManager.sharedInstance.database?.close()
     }

@@ -20,15 +20,26 @@ class ShipperViewController: NSViewController {
     @IBAction func checkAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
-        ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
-            var result: String = ""
-            for trace in shipperModel.traces! {
-                result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
+        if !ShipperTable.checkDataExistInShipper(logisticCode: logisticCode, shipperCode: shipperCode) {
+            ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
+                var result: String = ""
+                for trace in shipperModel.traces! {
+                    result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
+                }
+                self.contentTextView.string = result
+                ShipperTable.insertShipper(shipper: shipperModel, failure: { (error) in
+                    switch (error as NSError).code {
+                    case 19:
+                        print("duplicate data")
+                    default:
+                        print("error: \(error)")
+                    }
+                })
+            }) { (error) in
+                print("error: \(error)")
             }
-            self.contentTextView.string = result
-            ShipperTable.insertShipper(shipper: shipperModel)
-        }) { (error) in
-            print("error: \(error)")
+        } else {
+            
         }
     }
     

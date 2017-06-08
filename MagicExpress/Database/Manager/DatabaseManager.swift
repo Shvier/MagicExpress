@@ -24,7 +24,6 @@ class DatabaseManager: NSObject {
         return NSHomeDirectory().appending("/Library/\(Bundle.main.bundleIdentifier!)/Database")
     }()
     
-    
     func checkDatabaseFile() -> Bool {
         return fileManager.fileExists(atPath: databasePath)
     }
