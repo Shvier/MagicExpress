@@ -59,42 +59,30 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
         return shippers == nil ? 0 : (shippers?.count)!
     }
     
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if (tableColumn?.isEqual(to: tableView.tableColumns[0]))! {
-            return shippers?[row].shipperCode
-//            return "顺丰"
-        } else if (tableColumn?.isEqual(to: tableView.tableColumns[1]))! {
-            return shippers?[row].logisticCode
-//            return "123456"
-        } else if (tableColumn?.isEqual(to: tableView.tableColumns[2]))! {
-            return shippers?[row].traces?.last?.acceptStation
-//            return "已签收"
-        } else {
-            return nil
-        }
-    }
-    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var reuse = ""
         if (tableColumn?.isEqual(to: tableView.tableColumns[0]))! {
             reuse = "CellID1"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
-//                cell.textField?.stringValue = "顺丰速运"
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.shipperCode)!
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[1]))! {
             reuse = "CellID2"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
-//                cell.textField?.stringValue = "123456789"
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.logisticCode)!
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[2]))! {
             reuse = "CellID3"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
-//                cell.textField?.stringValue = "派送中"
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptStation)!
+                return cell
+            }
+        } else if (tableColumn?.isEqual(to: tableView.tableColumns[3]))! {
+            reuse = "CellID4"
+            if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
+                cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptTime)!
                 return cell
             }
         }
