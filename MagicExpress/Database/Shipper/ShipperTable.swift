@@ -39,7 +39,7 @@ class ShipperTable: BaseTable {
             return
         }
         do {
-            try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Shipper (logistic_code, shipper_code, update_time)" + "VALUES (?, ?, ?)", values: [shipper.logisticCode!, shipper.shipperCode!, shipper.updateTime!])
+//            try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Shipper (logistic_code, shipper_code, update_time)" + "VALUES (?, ?, ?)", values: [shipper.logisticCode!, shipper.shipperCode!, shipper.updateTime!])
             for trace in shipper.traces! {
                 try DatabaseManager.sharedInstance.database?.executeUpdate("INSERT INTO Trace (shipper_code, logistic_code, accept_time, accept_station)" + "VALUES (?, ?, ?, ?)", values: [shipper.shipperCode!, shipper.logisticCode!, trace.acceptTime!, trace.acceptStation!])
             }
@@ -55,7 +55,7 @@ class ShipperTable: BaseTable {
             return
         }
         do {
-            try DatabaseManager.sharedInstance.database?.executeUpdate("DELETE FROM Shipper WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
+//            try DatabaseManager.sharedInstance.database?.executeUpdate("DELETE FROM Shipper WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
             try DatabaseManager.sharedInstance.database?.executeUpdate("DELETE FROM Trace WHERE logistic_code = ? AND shipper_code = ?", values: [logisticCode, shipperCode])
         } catch (let error) {
             print("insert error: \(error)")
@@ -69,7 +69,23 @@ class ShipperTable: BaseTable {
             return ShipperModel()
         }
         do {
-            
+            let result = try DatabaseManager.sharedInstance.database?.executeQuery("SELECT * FROM Trace WHERE logistic_code = ? AND shipper_code = ? ORDER BY accept_time", values: [logisticCode, shipperCode])
+            let shipper = ShipperModel()
+            shipper.logisticCode = logisticCode
+            shipper.shipperCode = shipperCode
+            var traces = Array<TraceModel>()
+            while (result?.next())! {
+                let trace = TraceModel()
+                trace.logisticCode = logisticCode
+                trace.shipperCode = shipperCode
+                trace.acceptTime = result?.string(forColumn: "accept_time")
+                trace.acceptStation = result?.string(forColumn: "accept_station")
+                traces.append(trace)
+            }
+            shipper.traces = traces
+            return shipper
+        } catch (let error) {
+            print("\(error)")
         }
         return ShipperModel()
     }
