@@ -50,7 +50,7 @@ class ShipperViewController: NSViewController {
     @IBAction func subscribeAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
-        ShipperAPIService.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeAPIModel) in
+        ShipperDataController.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeModel) in
             self.dismissViewController(self)
         }) { (error) in
             

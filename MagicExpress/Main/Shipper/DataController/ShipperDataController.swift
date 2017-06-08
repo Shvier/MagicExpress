@@ -46,5 +46,13 @@ class ShipperDataController: NSObject {
             failure(error)
         }
     }
+    
+    static func subscribe(shipperCode: String, logisticCode: String, success: @escaping (_ subscribeAPIModel: SubscribeAPIModel) -> Void, failure: @escaping (_ error: Error) -> Void) {
+        ShipperAPIService.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { (subscribeModel) in
+            success(subscribeModel)
+        }) { (error) in
+            failure(error)
+        }
+    }
 
 }
