@@ -853,22 +853,19 @@
                                 </tableHeaderView>
                             </scrollView>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z7h-tm-MDd">
-                                <rect key="frame" x="18" y="236" width="91" height="26"/>
+                                <rect key="frame" x="18" y="236" width="64" height="26"/>
                                 <popUpButtonCell key="cell" type="push" title="全部" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="16U-pl-hKa" id="FJ5-jQ-gVl">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="7s4-JM-5U9">
                                         <items>
                                             <menuItem title="全部" state="on" id="16U-pl-hKa"/>
-                                            <menuItem title="中通快递" id="fq4-bV-OSk"/>
-                                            <menuItem title="申通快递" id="RLT-Gg-i7o"/>
-                                            <menuItem title="圆通快递" id="c2J-15-oCh"/>
-                                            <menuItem title="韵达快递" id="Uam-aY-c45"/>
-                                            <menuItem title="顺丰速运" id="Qp5-a6-JWY"/>
-                                            <menuItem title="京东快递" id="3oK-5a-3jS"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="filterTableViewAction:" target="XfG-lQ-9wD" id="WQf-BS-gGF"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-S2-DCj">
                                 <rect key="frame" x="218" y="241" width="44" height="17"/>
@@ -942,6 +939,7 @@
                         <outlet property="addButton" destination="WSU-gf-g08" id="dWE-ux-7wF"/>
                         <outlet property="editButton" destination="e8V-bX-Axu" id="CGU-ee-ZwS"/>
                         <outlet property="refreshButton" destination="dAP-l8-fFb" id="h23-6c-whr"/>
+                        <outlet property="shipperPopUpButton" destination="Z7h-tm-MDd" id="kh3-Yy-GyM"/>
                         <outlet property="tableView" destination="PDi-eI-rYY" id="YwL-BI-vwe"/>
                     </connections>
                 </viewController>

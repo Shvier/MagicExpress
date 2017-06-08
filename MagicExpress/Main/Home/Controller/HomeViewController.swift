@@ -14,6 +14,7 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var refreshButton: NSButton!
     @IBOutlet weak var editButton: NSButton!
+    @IBOutlet weak var shipperPopUpButton: NSPopUpButton!
     
     var shippers: Array<ShipperModel>?
     
@@ -21,6 +22,23 @@ class HomeViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    @IBAction func filterTableViewAction(_ sender: NSPopUpButton) {
+        
+    }
+    
+    @IBAction func addButtonAction(_ sender: NSButton) {
+        let shipperVC = ShipperViewController(nibName: "ShipperViewController", bundle: nil)
+        self.presentViewControllerAsSheet(shipperVC!)
+    }
+    
+    @IBAction func refreshButtonAction(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func editButtonAction(_ sender: NSButton) {
+        
     }
     
     override func viewDidLoad() {
@@ -35,20 +53,12 @@ class HomeViewController: NSViewController {
             NSUserNotificationCenter.default.scheduleNotification(notification)
         }
         shippers = ShipperTable.getShippers()
+        var shipperCodes = Array<String>()
+        for shipper in shippers! {
+            shipperCodes.append(shipper.shipperCode!)
+        }
+        shipperPopUpButton.addItems(withTitles: shipperCodes)
         tableView.reloadData()
-    }
-    
-    @IBAction func addButtonAction(_ sender: NSButton) {
-        let shipperVC = ShipperViewController(nibName: "ShipperViewController", bundle: nil)
-        self.presentViewControllerAsSheet(shipperVC!)
-    }
-    
-    @IBAction func refreshButtonAction(_ sender: NSButton) {
-        
-    }
-    
-    @IBAction func editButtonAction(_ sender: NSButton) {
-        
     }
     
 }
