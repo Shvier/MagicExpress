@@ -71,6 +71,13 @@ class HomeViewController: NSViewController {
 
 extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
     
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        let shipperDetailVC = ShipperDetailViewController(nibName: "ShipperDetailViewController", bundle: nil)
+        self.presentViewControllerAsSheet(shipperDetailVC!)
+        
+        return true
+    }
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return shippers == nil ? 0 : (shippers?.count)!
     }
