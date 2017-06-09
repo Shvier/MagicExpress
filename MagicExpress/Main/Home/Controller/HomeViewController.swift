@@ -91,6 +91,7 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
             reuse = "CellID3"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptStation)!
+                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[3]))! {
