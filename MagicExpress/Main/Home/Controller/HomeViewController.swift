@@ -79,12 +79,14 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
             reuse = "CellID1"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.shipperCode)!
+                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[1]))! {
             reuse = "CellID2"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.logisticCode)!
+                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[2]))! {
@@ -98,6 +100,7 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
             reuse = "CellID4"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptTime)!
+                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
                 return cell
             }
         }
