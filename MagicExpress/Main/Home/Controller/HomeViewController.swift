@@ -61,6 +61,12 @@ class HomeViewController: NSViewController {
         tableView.reloadData()
     }
     
+    func heightForCell(content: String) -> CGFloat {
+        let contentString: NSString = content as NSString
+        let bounds = contentString.boundingRect(with: NSSize(width: 240, height: 0), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: NSFont.systemFont(ofSize: 13)])
+        return bounds.size.height
+    }
+    
 }
 
 extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -70,7 +76,7 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 80
+        return heightForCell(content: (shippers?[row].traces?.last?.acceptStation)!)
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -79,28 +85,28 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
             reuse = "CellID1"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.shipperCode)!
-                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
+                cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.shipperCode)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[1]))! {
             reuse = "CellID2"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.logisticCode)!
-                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
+                cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.logisticCode)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[2]))! {
             reuse = "CellID3"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptStation)!
-                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
+                cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.acceptStation)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[3]))! {
             reuse = "CellID4"
             if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptTime)!
-                cell.textField?.frame = CGRect(x: 0, y: -2*(cell.textField?.frame.origin.y)!, width: (cell.textField?.frame.size.width)!, height: 80)
+                cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.acceptTime)!))
                 return cell
             }
         }
