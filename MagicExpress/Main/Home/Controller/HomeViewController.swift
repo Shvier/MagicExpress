@@ -73,8 +73,12 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         let shipperDetailVC = ShipperDetailViewController(nibName: "ShipperDetailViewController", bundle: nil)
+        var result = ""
+        for trace in (shippers?[row].traces)! {
+            result += trace.acceptStation! + "\n"
+        }
+        shipperDetailVC?.content = result
         self.presentViewControllerAsSheet(shipperDetailVC!)
-        
         return true
     }
     
