@@ -41,6 +41,10 @@ class HomeViewController: NSViewController {
         
     }
     
+    @IBAction func historyButtonAction(_ sender: NSButton) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -59,6 +63,7 @@ class HomeViewController: NSViewController {
         }
         shipperPopUpButton.addItems(withTitles: shipperCodes)
         tableView.reloadData()
+        shipperPopUpButton.menu?.addItem(NSMenuItem.separator())
     }
     
     func heightForCell(content: String) -> CGFloat {

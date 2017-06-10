@@ -343,6 +343,20 @@
                                     <action selector="refreshButtonAction:" target="XfG-lQ-9wD" id="RGX-M4-OKs"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sVp-sh-WFA">
+                                <rect key="frame" x="164" y="232" width="76" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="9pb-6H-ejc"/>
+                                    <constraint firstAttribute="height" constant="21" id="iC1-yR-Bgl"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="已完成" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XQz-V2-1RZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="historyButtonAction:" target="XfG-lQ-9wD" id="rHo-Dd-Vvh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xkd-Kv-9HH" secondAttribute="trailing" constant="20" id="49v-yw-RWZ"/>
@@ -352,6 +366,8 @@
                             <constraint firstItem="dAP-l8-fFb" firstAttribute="leading" secondItem="e8V-bX-Axu" secondAttribute="trailing" constant="10" id="JkN-UE-sRg"/>
                             <constraint firstItem="xkd-Kv-9HH" firstAttribute="top" secondItem="fy9-S2-DCj" secondAttribute="bottom" constant="12" id="KIU-YO-IzE"/>
                             <constraint firstItem="fy9-S2-DCj" firstAttribute="centerY" secondItem="Z7h-tm-MDd" secondAttribute="centerY" id="OEh-dE-OeA"/>
+                            <constraint firstItem="sVp-sh-WFA" firstAttribute="centerY" secondItem="Z7h-tm-MDd" secondAttribute="centerY" id="aSI-EG-o9o"/>
+                            <constraint firstItem="sVp-sh-WFA" firstAttribute="leading" secondItem="Z7h-tm-MDd" secondAttribute="trailing" constant="10" id="e2e-RR-TVe"/>
                             <constraint firstAttribute="bottom" secondItem="xkd-Kv-9HH" secondAttribute="bottom" constant="20" id="jmv-JD-Mpp"/>
                             <constraint firstItem="xkd-Kv-9HH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="mat-Ff-ezB"/>
                             <constraint firstItem="Z7h-tm-MDd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="mlj-PV-Ytw"/>

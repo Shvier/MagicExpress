@@ -36,7 +36,12 @@ class ShipperViewController: NSViewController {
                     }
                 })
             }) { (error) in
-                print("error: \(error)")
+                switch (error as NSError).code {
+                case 100404:
+                    print("data not found")
+                default:
+                    print("error: \(error)")
+                }
             }
         } else {
             
