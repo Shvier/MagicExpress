@@ -34,7 +34,9 @@ class HomeViewController: NSViewController {
     }
     
     @IBAction func refreshButtonAction(_ sender: NSButton) {
-        
+        for shipper in shippers! {
+            
+        }
     }
     
     @IBAction func editButtonAction(_ sender: NSButton) {

@@ -20,13 +20,13 @@ class ShipperViewController: NSViewController {
     @IBAction func checkAction(_ sender: NSButton) {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
-        if !ShipperTable.checkDataExistInShipper(logisticCode: logisticCode, shipperCode: shipperCode) {
-            ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
-                var result: String = ""
-                for trace in shipperModel.traces! {
-                    result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
-                }
-                self.contentTextView.string = result
+        ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
+            var result: String = ""
+            for trace in shipperModel.traces! {
+                result += trace.acceptTime! + "\n" + trace.acceptStation! + "\n"
+            }
+            self.contentTextView.string = result
+            if !ShipperTable.checkDataExistInShipper(logisticCode: logisticCode, shipperCode: shipperCode) {
                 ShipperTable.insertShipper(shipper: shipperModel, failure: { (error) in
                     switch (error as NSError).code {
                     case 19:
@@ -35,16 +35,16 @@ class ShipperViewController: NSViewController {
                         print("error: \(error)")
                     }
                 })
-            }) { (error) in
-                switch (error as NSError).code {
-                case 100404:
-                    print("data not found")
-                default:
-                    print("error: \(error)")
-                }
+            } else {
+                
             }
-        } else {
-            
+        }) { (error) in
+            switch (error as NSError).code {
+            case 100404:
+                print("data not found")
+            default:
+                print("error: \(error)")
+            }
         }
     }
     
