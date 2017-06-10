@@ -56,7 +56,11 @@ class ShipperViewController: NSViewController {
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeModel) in
-            self.dismissViewController(self)
+            if !subscribeModel.result! {
+                print("data not found")
+            } else {
+                self.dismissViewController(self)
+            }
         }) { (error) in
             
         }
