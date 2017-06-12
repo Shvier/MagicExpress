@@ -37,7 +37,7 @@ class ShipperViewController: NSViewController {
                 })
             } else {
                 
-            }
+            }		
         }) { (error) in
             switch (error as NSError).code {
             case 100404:
@@ -83,7 +83,6 @@ class ShipperViewController: NSViewController {
         shipperTextField.delegate = self
         checkButton.isEnabled = false
         subscribeButton.isEnabled = false
-        contentTextView.string = "12\n3i\n9\noj\na\nsd\nm.,,./sdf,pa\ns\n9\n0\na\nsd\nf\na\ns\nd\nf\nw\nro"
         
         shipperPopUpButton.addItems(withTitles: ExpressTable.getExpressName())
     }
