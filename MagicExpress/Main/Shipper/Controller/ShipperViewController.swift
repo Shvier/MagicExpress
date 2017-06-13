@@ -18,6 +18,8 @@ class ShipperViewController: NSViewController {
     @IBOutlet var contentTextView: NSTextView!
     
     @IBAction func checkAction(_ sender: NSButton) {
+//        ProgressHUD.showMessage(content: "正在查询", to: view)
+        MBProgressHUD.showAdded(to: view, animated: true)
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
