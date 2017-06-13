@@ -37,8 +37,7 @@
 		C061C73E1EA89AE000F5DBCE /* BaseAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C73D1EA89AE000F5DBCE /* BaseAPIModel.swift */; };
 		C061C7401EA89B0A00F5DBCE /* UserInfoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C73F1EA89B0A00F5DBCE /* UserInfoAPIModel.swift */; };
 		C061C7421EA8A08D00F5DBCE /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7411EA8A08D00F5DBCE /* UserAPIService.swift */; };
-		C07C59FE1EEE79D50054D5F8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C59FD1EEE79D50054D5F8 /* ActivityIndicator.swift */; };
-		C07C5A001EEEA1250054D5F8 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C59FF1EEEA1250054D5F8 /* ProgressHUD.swift */; };
+		C070BE591EEFD3DF003C6EF9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C070BE581EEFD3DF003C6EF9 /* MBProgressHUD.m */; };
 		C09A4B961EA12B4B004818C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A4B951EA12B4B004818C4 /* AppDelegate.swift */; };
 		C09A4B9A1EA12B4B004818C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09A4B991EA12B4B004818C4 /* Assets.xcassets */; };
 		C09A4B9D1EA12B4B004818C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09A4B9B1EA12B4B004818C4 /* Main.storyboard */; };
@@ -97,8 +96,9 @@
 		C061C73D1EA89AE000F5DBCE /* BaseAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIModel.swift; sourceTree = "<group>"; };
 		C061C73F1EA89B0A00F5DBCE /* UserInfoAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAPIModel.swift; sourceTree = "<group>"; };
 		C061C7411EA8A08D00F5DBCE /* UserAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
-		C07C59FD1EEE79D50054D5F8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		C07C59FF1EEEA1250054D5F8 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		C070BE561EEFD3DF003C6EF9 /* MagicExpress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MagicExpress-Bridging-Header.h"; sourceTree = "<group>"; };
+		C070BE571EEFD3DF003C6EF9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C070BE581EEFD3DF003C6EF9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C09A4B921EA12B4B004818C4 /* MagicExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09A4B951EA12B4B004818C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C09A4B991EA12B4B004818C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -416,8 +416,9 @@
 		C07C59FC1EEE79BD0054D5F8 /* ProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				C07C59FD1EEE79D50054D5F8 /* ActivityIndicator.swift */,
-				C07C59FF1EEEA1250054D5F8 /* ProgressHUD.swift */,
+				C070BE571EEFD3DF003C6EF9 /* MBProgressHUD.h */,
+				C070BE581EEFD3DF003C6EF9 /* MBProgressHUD.m */,
+				C070BE561EEFD3DF003C6EF9 /* MagicExpress-Bridging-Header.h */,
 			);
 			path = ProgressHUD;
 			sourceTree = "<group>";
@@ -628,6 +629,7 @@
 					C09A4B911EA12B4B004818C4 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = PGNG7584J8;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -758,11 +760,10 @@
 			files = (
 				C061C73E1EA89AE000F5DBCE /* BaseAPIModel.swift in Sources */,
 				C061C7421EA8A08D00F5DBCE /* UserAPIService.swift in Sources */,
-				C07C5A001EEEA1250054D5F8 /* ProgressHUD.swift in Sources */,
 				C043166D1EA3A96E002E0533 /* PopoverViewController.swift in Sources */,
 				C03197BE1EE14AAE00A81510 /* ShipperViewController.swift in Sources */,
-				C07C59FE1EEE79D50054D5F8 /* ActivityIndicator.swift in Sources */,
 				C04D83571EA60FF8002968FB /* HTTPManager.swift in Sources */,
+				C070BE591EEFD3DF003C6EF9 /* MBProgressHUD.m in Sources */,
 				C0C2CAD01EA3BCF100DF68DF /* HomeTableViewCell.swift in Sources */,
 				C03619D01EE2CD1900B79F21 /* TraceAPIModel.swift in Sources */,
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
@@ -928,6 +929,7 @@
 			baseConfigurationReference = F4EAAEC3D7EEAECEF30EAD21 /* Pods-MagicExpress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MagicExpress/MagicExpress.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -938,6 +940,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.MagicExpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MagicExpress/Utility/ProgressHUD/MagicExpress-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -947,6 +951,7 @@
 			baseConfigurationReference = 9ACCB4C2AD6BEC02BBBEF5F3 /* Pods-MagicExpress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MagicExpress/MagicExpress.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -957,6 +962,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.MagicExpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MagicExpress/Utility/ProgressHUD/MagicExpress-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

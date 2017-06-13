@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import DJProgressHUD_OSX
 
 class HomeViewController: NSViewController {
     
