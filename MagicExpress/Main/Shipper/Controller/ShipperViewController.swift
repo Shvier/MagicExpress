@@ -66,6 +66,7 @@ class ShipperViewController: NSViewController {
     }
     
     @IBAction func subscribeAction(_ sender: NSButton) {
+        let progressHUD = ProgressHUD.showMessage(content: "正在订阅订单动态", to: contentTextView)
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeModel) in
@@ -78,7 +79,10 @@ class ShipperViewController: NSViewController {
                 self.dismissViewController(self)
             }
         }) { (error) in
-            
+            progressHUD.labelText = "网络错误，错误代码:\((error as NSError).code)"
+            progressHUD.show(true)
+            progressHUD.hide(true, afterDelay: 1.0)
+            print("error: \(error)")
         }
     }
     
