@@ -18,8 +18,7 @@ class ShipperViewController: NSViewController {
     @IBOutlet var contentTextView: NSTextView!
     
     @IBAction func checkAction(_ sender: NSButton) {
-//        ProgressHUD.showMessage(content: "正在查询", to: view)
-        MBProgressHUD.showAdded(to: view, animated: true)
+        let progressHUD = ProgressHUD.showMessage(content: "正在查询", to: contentTextView)
         let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
@@ -32,8 +31,14 @@ class ShipperViewController: NSViewController {
                 ShipperTable.insertShipper(shipper: shipperModel, failure: { (error) in
                     switch (error as NSError).code {
                     case 19:
+                        progressHUD.labelText = "数据插入失败，已存在此数据:\(error)"
+                        progressHUD.show(true)
+                        progressHUD.hide(true, afterDelay: 1.0)
                         print("duplicate data")
                     default:
+                        progressHUD.labelText = "数据插入失败:\(error)"
+                        progressHUD.show(true)
+                        progressHUD.hide(true, afterDelay: 1.0)
                         print("error: \(error)")
                     }
                 })
@@ -43,8 +48,14 @@ class ShipperViewController: NSViewController {
         }) { (error) in
             switch (error as NSError).code {
             case 100404:
+                progressHUD.labelText = "订单号错误，请检查"
+                progressHUD.show(true)
+                progressHUD.hide(true, afterDelay: 1.0)
                 print("data not found")
             default:
+                progressHUD.labelText = "网络错误，错误代码:\((error as NSError).code)"
+                progressHUD.show(true)
+                progressHUD.hide(true, afterDelay: 1.0)
                 print("error: \(error)")
             }
         }
@@ -59,6 +70,9 @@ class ShipperViewController: NSViewController {
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.subscribe(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (subscribeModel) in
             if !subscribeModel.result! {
+                progressHUD.labelText = "订单号错误，请检查"
+                progressHUD.show(true)
+                progressHUD.hide(true, afterDelay: 1.0)
                 print("data not found")
             } else {
                 self.dismissViewController(self)
