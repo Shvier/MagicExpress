@@ -48,14 +48,6 @@ class HomeViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        let notification = NSUserNotification()
-        notification.title = "测试本地推送"
-        notification.informativeText = "推送的内容"
-        notification.actionButtonTitle = "查看"
-        notification.soundName = NSUserNotificationDefaultSoundName
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { 
-            NSUserNotificationCenter.default.scheduleNotification(notification)
-        }
         shippers = ShipperTable.getShippers()
         var shipperCodes = Array<String>()
         for shipper in shippers! {
