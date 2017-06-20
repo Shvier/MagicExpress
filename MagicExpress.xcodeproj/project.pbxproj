@@ -37,6 +37,7 @@
 		C061C73E1EA89AE000F5DBCE /* BaseAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C73D1EA89AE000F5DBCE /* BaseAPIModel.swift */; };
 		C061C7401EA89B0A00F5DBCE /* UserInfoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C73F1EA89B0A00F5DBCE /* UserInfoAPIModel.swift */; };
 		C061C7421EA8A08D00F5DBCE /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C061C7411EA8A08D00F5DBCE /* UserAPIService.swift */; };
+		C0705EEB1EF9040800A68023 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0705EEA1EF9040800A68023 /* PushNotificationManager.swift */; };
 		C070BE591EEFD3DF003C6EF9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C070BE581EEFD3DF003C6EF9 /* MBProgressHUD.m */; };
 		C070BE5B1EEFDCD0003C6EF9 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BE5A1EEFDCD0003C6EF9 /* ProgressHUD.swift */; };
 		C09A4B961EA12B4B004818C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09A4B951EA12B4B004818C4 /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 		C061C73D1EA89AE000F5DBCE /* BaseAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIModel.swift; sourceTree = "<group>"; };
 		C061C73F1EA89B0A00F5DBCE /* UserInfoAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAPIModel.swift; sourceTree = "<group>"; };
 		C061C7411EA8A08D00F5DBCE /* UserAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
+		C0705EEA1EF9040800A68023 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		C070BE561EEFD3DF003C6EF9 /* MagicExpress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MagicExpress-Bridging-Header.h"; sourceTree = "<group>"; };
 		C070BE571EEFD3DF003C6EF9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C070BE581EEFD3DF003C6EF9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		C061C72D1EA8837D00F5DBCE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C0705EE91EF903F900A68023 /* PushNotification */,
 				C07C59FC1EEE79BD0054D5F8 /* ProgressHUD */,
 				C061C72E1EA8837D00F5DBCE /* UserDefaults */,
 			);
@@ -413,6 +416,14 @@
 				C061C73D1EA89AE000F5DBCE /* BaseAPIModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C0705EE91EF903F900A68023 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				C0705EEA1EF9040800A68023 /* PushNotificationManager.swift */,
+			);
+			path = PushNotification;
 			sourceTree = "<group>";
 		};
 		C07C59FC1EEE79BD0054D5F8 /* ProgressHUD */ = {
@@ -773,6 +784,7 @@
 				C03619CC1EE2886F00B79F21 /* ShipperAPIService.swift in Sources */,
 				C039E0BB1EE90F4E005ACCF1 /* String+extension.swift in Sources */,
 				C0510BD91EE7ABE600EC11C8 /* DatabaseManager.swift in Sources */,
+				C0705EEB1EF9040800A68023 /* PushNotificationManager.swift in Sources */,
 				C0510BDE1EE7D77400EC11C8 /* ShipperModel.swift in Sources */,
 				C0510BDB1EE7C95A00EC11C8 /* ShipperTable.swift in Sources */,
 				C04316691EA3A8F9002E0533 /* PopoverCollectionItem.swift in Sources */,
