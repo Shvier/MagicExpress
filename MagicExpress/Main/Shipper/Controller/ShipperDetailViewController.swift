@@ -22,7 +22,7 @@ class ShipperDetailViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        contentTextView.string = content
+        contentTextView.string = content!
     }
     
 }

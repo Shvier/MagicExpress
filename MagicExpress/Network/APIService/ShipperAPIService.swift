@@ -32,6 +32,7 @@ class ShipperAPIService: NSObject {
             }
         }) { (error) in
             failure(error)
+            print(error.localizedDescription)
         }
     }
     

@@ -18,16 +18,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        statusItem = NSStatusBar.system().statusItem(withLength: -2)
+        statusItem = NSStatusBar.system.statusItem(withLength: -2)
         if let button = statusItem?.button {
-            button.image = NSImage(named: "resizeApi")
+            button.image = NSImage(named: NSImage.Name(rawValue: "resizeApi"))
             button.action = #selector(AppDelegate.itemAction(item:))
         }
         shareMenu = NSMenu(title: "菜单")
         shareMenu?.addItem(NSMenuItem(title: "选项一", action: #selector(AppDelegate.showAction(item:)), keyEquivalent: "P"))
         shareMenu?.addItem(NSMenuItem(title: "选项二", action: #selector(AppDelegate.exitAction(item:)), keyEquivalent: "Q"))
         
-        popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
+        popover.contentViewController = PopoverViewController(nibName: NSNib.Name(rawValue: "PopoverViewController"), bundle: nil)
         
         register()
         if !UserManager.isLogin() {

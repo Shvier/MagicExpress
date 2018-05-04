@@ -29,8 +29,8 @@ class HomeViewController: NSViewController {
     }
     
     @IBAction func addButtonAction(_ sender: NSButton) {
-        let shipperVC = ShipperViewController(nibName: "ShipperViewController", bundle: nil)
-        self.presentViewControllerAsSheet(shipperVC!)
+        let shipperVC = ShipperViewController(nibName: NSNib.Name(rawValue: "ShipperViewController"), bundle: nil)
+        self.presentViewControllerAsSheet(shipperVC)
     }
     
     @IBAction func refreshButtonAction(_ sender: NSButton) {
@@ -48,11 +48,11 @@ class HomeViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        shippers = ShipperTable.getShippers()
+//        shippers = ShipperTable.getShippers()
         var shipperCodes = Array<String>()
-        for shipper in shippers! {
-            shipperCodes.append(shipper.shipperCode!)
-        }
+//        for shipper in shippers! {
+//            shipperCodes.append(shipper.shipperCode!)
+//        }
         shipperPopUpButton.addItems(withTitles: shipperCodes)
         tableView.reloadData()
         shipperPopUpButton.menu?.addItem(NSMenuItem.separator())
@@ -60,7 +60,7 @@ class HomeViewController: NSViewController {
     
     func heightForCell(content: String) -> CGFloat {
         let contentString: NSString = content as NSString
-        let bounds = contentString.boundingRect(with: NSSize(width: 240, height: 0), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: NSFont.systemFont(ofSize: 13)])
+        let bounds = contentString.boundingRect(with: NSSize(width: 240, height: 0), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [kCTFontAttributeName as NSAttributedStringKey: NSFont.systemFont(ofSize: 13)])
         return bounds.size.height
     }
     
@@ -69,13 +69,13 @@ class HomeViewController: NSViewController {
 extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        let shipperDetailVC = ShipperDetailViewController(nibName: "ShipperDetailViewController", bundle: nil)
+        let shipperDetailVC = ShipperDetailViewController(nibName: NSNib.Name(rawValue: "ShipperDetailViewController"), bundle: nil)
         var result = ""
         for trace in (shippers?[row].traces)! {
             result += trace.acceptStation! + "\n"
         }
-        shipperDetailVC?.content = result
-        self.presentViewControllerAsSheet(shipperDetailVC!)
+        shipperDetailVC.content = result
+        self.presentViewControllerAsSheet(shipperDetailVC)
         return true
     }
     
@@ -91,28 +91,28 @@ extension HomeViewController: NSTableViewDelegate, NSTableViewDataSource {
         var reuse = ""
         if (tableColumn?.isEqual(to: tableView.tableColumns[0]))! {
             reuse = "CellID1"
-            if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
+            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: reuse), owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.shipperCode)!
                 cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.shipperCode)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[1]))! {
             reuse = "CellID2"
-            if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
+            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: reuse), owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.logisticCode)!
                 cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.logisticCode)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[2]))! {
             reuse = "CellID3"
-            if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
+            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: reuse), owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptStation)!
                 cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.acceptStation)!))
                 return cell
             }
         } else if (tableColumn?.isEqual(to: tableView.tableColumns[3]))! {
             reuse = "CellID4"
-            if let cell = tableView.make(withIdentifier: reuse, owner: nil) as? NSTableCellView {
+            if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: reuse), owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = (shippers?[row].traces?.last?.acceptTime)!
                 cell.textField?.frame = CGRect(x: 0, y: 0, width: (cell.textField?.frame.size.width)!, height: heightForCell(content: (shippers?[row].traces?.last?.acceptTime)!))
                 return cell
