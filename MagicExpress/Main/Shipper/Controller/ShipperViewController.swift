@@ -19,7 +19,7 @@ class ShipperViewController: NSViewController {
     
     @IBAction func checkAction(_ sender: NSButton) {
         let progressHUD = ProgressHUD.showMessage(content: "正在查询", to: contentTextView)
-        let shipperCode: String = shipperPopUpButton.titleOfSelectedItem!
+        let shipperCode: String = ExpressTable.getExpressCode(shipperCode: shipperPopUpButton.titleOfSelectedItem!)
         let logisticCode: String = shipperTextField.stringValue
         ShipperDataController.queryShipper(shipperCode: shipperCode, logisticCode: logisticCode, success: { [unowned self] (shipperModel) in
             var result: String = ""
